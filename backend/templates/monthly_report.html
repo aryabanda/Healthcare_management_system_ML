@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Report</title>
+</head>
+<body>
+    <h1>Monthly Report — {{ month_name }} {{ year }}</h1>
+    <h2>Doctor: {{ doctor_name }}</h2>
+
+    <p>Total: {{ total }}</p>
+    <p>Completed: {{ completed }}</p>
+    <p>Cancelled: {{ cancelled }}</p>
+
+    <table border="1" cellpadding="4">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Patient</th>
+            <th>Status</th>
+            <th>Diagnosis</th>
+            <th>Prescription</th>
+        </tr>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.date }}</td>
+            <td>{{ row.time }}</td>
+            <td>{{ row.patient }}</td>
+            <td>{{ row.status }}</td>
+            <td>{{ row.diagnosis }}</td>
+            <td>{{ row.prescription }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
